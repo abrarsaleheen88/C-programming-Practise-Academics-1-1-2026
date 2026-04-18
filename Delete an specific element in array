@@ -1,0 +1,45 @@
+// Delete an element of an array by inputting a specific value
+
+#include<stdio.h>
+
+int main()
+{
+    int i;
+    int size;
+    printf("Enter elements > ");
+    scanf("%d",&size);
+
+
+    int arr[size];
+
+    for (int i = 0;i<size;i++)
+    {
+        printf("Enter elements %d> ",i+1);
+        scanf("%d",&arr[i]);
+    }
+
+int val;
+  printf("Enter a value to delete \n");
+  scanf("%d",&val);
+
+  int pos;
+  for (int i=0;i<size;i++)
+  {
+      if (val == arr[i])// for value of an array  - take arr[i] ; for position only  take i 
+      {
+         pos = i;
+         for(i = pos;i<size-1;i++)
+         {
+             arr[i]=arr[i+1];
+         }
+         size--;
+
+      }
+  }
+
+
+   for (int i=0;i<size;i++)
+  {
+     printf("%d,",arr[i]);
+  }
+}
